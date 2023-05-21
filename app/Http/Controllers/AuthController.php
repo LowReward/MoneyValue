@@ -19,7 +19,7 @@ class AuthController extends Controller
     if (!$admin || !Hash::check($credentials['password'], $admin->password)) {
         return response()->json(['error' => 'Unauthorized'], 401);
     }
-    
+
     $token = $admin->createToken('admin-token')->plainTextToken;
 
     return response()->json(['token' => $token]);
