@@ -10,6 +10,7 @@ class Pair extends Model
         'currency_from',
         'currency_to',
         'conversion_rate',
+        'request_count'
     ];
 
     // Définir les relations avec d'autres modèles si nécessaire

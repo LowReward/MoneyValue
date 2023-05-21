@@ -30,7 +30,7 @@ class ConversionPairController extends Controller
         }
 
         // Effectuer le calcul de conversion
-        $conversionAmount = $amount * $pair->rate;
+        $conversionAmount = $amount * $pair->conversion_rate;
         $pair->increment('request_count');
 
         return response()->json([
