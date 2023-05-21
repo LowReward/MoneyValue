@@ -19,8 +19,9 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        
+
         //Appel du seeder à exécuter
         $this->call(AdminSeeder::class);
+        $this->call(CurrenciesSeeder::class);
     }
 }
