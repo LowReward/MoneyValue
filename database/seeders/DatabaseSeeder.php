@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         //Appel du seeder à exécuter
         $this->call(AdminSeeder::class);
         $this->call(CurrenciesSeeder::class);
+        $this->call(PairsSeeder::class);
     }
 }
