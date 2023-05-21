@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CurrenciesController;
+use App\Http\Controllers\PairsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,12 @@ Route::get('/currencies', [CurrenciesController::class, 'index']);
     Route::post('/currencies', [CurrenciesController::class, 'store']);
     Route::put('/currencies/{currency}', [CurrenciesController::class, 'update']);
     Route::delete('/currencies/{currency}', [CurrenciesController::class, 'destroy']);
+//});
+
+Route::get('/pairs', [PairsController::class, 'index']);
+// Sanctum sera utilisé plus tard pour la redirection au login si pas de token
+//Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::post('/pairs', [PairsController::class, 'store']);
+    Route::put('/pairs/{pair}', [PairsController::class, 'update']);
+    Route::delete('/pairs/{pair}', [PairsController::class, 'destroy']);
 //});
