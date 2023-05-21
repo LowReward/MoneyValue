@@ -38,3 +38,5 @@ Route::get('/pairs', [PairsController::class, 'index']);
     Route::delete('/pairs/{pair}', [PairsController::class, 'destroy']);
 //});
 
+
+Route::post('/conversion', [ConversionPaircontroller::class, 'convert']);
