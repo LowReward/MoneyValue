@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CurrenciesController;
 use App\Http\Controllers\PairsController;
+use App\Http\Controllers\ConversionPairController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -36,3 +37,4 @@ Route::get('/pairs', [PairsController::class, 'index']);
     Route::put('/pairs/{pair}', [PairsController::class, 'update']);
     Route::delete('/pairs/{pair}', [PairsController::class, 'destroy']);
 //});
+

@@ -15,6 +15,8 @@ class CreatePairsTable extends Migration
             $table->string('currency_to');
             // Nom de la colonne, 8 = Précision totale de la valeur décimale (Max 8 chiffres), 4 = Nb chiffres décimaux max après virgule
             $table->decimal('conversion_rate', 8, 4);
+            // request_count sera un entier non signé avec 0 par défaut, l'incrémentation se fera à chaque requête
+            $table->unsignedInteger('request_count')->default(0);
             $table->timestamps();
         });
     }
