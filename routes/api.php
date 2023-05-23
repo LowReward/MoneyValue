@@ -25,6 +25,7 @@ Route::post('login', [AuthController::class, 'login'])
 Route::get('/currencies', [CurrenciesController::class, 'index']);
 // Sanctum sera utilisé plus tard pour la redirection au login si pas de token
 Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('/admin/currencies', [CurrenciesController::class, 'adminindex']);
     Route::post('/admin/currencies', [CurrenciesController::class, 'store']);
     Route::put('/admin/currencies/{currency}', [CurrenciesController::class, 'update']);
     Route::delete('/admin/currencies/{currency}', [CurrenciesController::class, 'destroy']);
