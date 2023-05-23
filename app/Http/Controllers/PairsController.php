@@ -9,13 +9,15 @@ class PairsController extends Controller
 {
     public function index()
     {
-        $pairs = Pair::all();
+        // Pour l'index user, on ne retourne que les informations importantes au publique.
+        $pairs = Pair::select('currency_from', 'currency_to', 'conversion_rate')->get();
         //Retourne la liste des Pairs sous le format json
         return response()->json($pairs);
     }
 
     public function adminindex()
     {
+        // Pour notre adminIndex, on retourne l'entierté des infromations.
         $pairs = Pair::all();
         //Retourne la liste des Pairs sous le format json
         return response()->json($pairs);
