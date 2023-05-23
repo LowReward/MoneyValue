@@ -14,6 +14,13 @@ class PairsController extends Controller
         return response()->json($pairs);
     }
 
+    public function adminindex()
+    {
+        $pairs = Pair::all();
+        //Retourne la liste des Pairs sous le format json
+        return response()->json($pairs);
+    }
+
     public function store(Request $request)
     {
         $request->validate([
