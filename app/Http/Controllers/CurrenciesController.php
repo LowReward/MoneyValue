@@ -9,6 +9,14 @@ class CurrenciesController extends Controller
 {
     public function index()
     {
+        // Pour l'index user, on ne retourne que les informations importantes au publique.
+        $devises = Currency::select('code', 'name')->get();
+        return response()->json($devises);
+    }
+
+    public function adminindex()
+    {
+        // Pour notre adminIndex, on retourne l'entierté des infromations.
         $devises = Currency::all();
         return response()->json($devises);
     }
