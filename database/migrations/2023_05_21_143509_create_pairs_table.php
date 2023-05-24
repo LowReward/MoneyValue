@@ -18,6 +18,9 @@ class CreatePairsTable extends Migration
             // request_count sera un entier non signé avec 0 par défaut, l'incrémentation se fera à chaque requête
             $table->unsignedInteger('request_count')->default(0);
             $table->timestamps();
+
+            $table->foreign('currency_from')->references('code')->on('currencies')->onDelete('cascade');
+            $table->foreign('currency_to')->references('code')->on('currencies')->onDelete('cascade');
         });
     }
 

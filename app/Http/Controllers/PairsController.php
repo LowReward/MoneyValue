@@ -32,7 +32,7 @@ class PairsController extends Controller
         ]);
 
         $pair = Pair::create($request->all());
-        // Traitée avec succès et nouvelle ressource de créee
+        // Traitée avec succès et nouvelle ressource de créee (201)
         return response()->json($pair, 201);
     }
 
@@ -45,7 +45,7 @@ class PairsController extends Controller
         ]);
 
         $pair->update($request->all());
-        // Traitée avec succès et du contenu à renvoyer
+        // Traitée avec succès et du contenu à renvoyer (200)
         return response()->json($pair, 200);
     }
 
@@ -53,7 +53,7 @@ class PairsController extends Controller
     {
         //Supprime la pair en entête de requête
         $pair->delete();
-         // Traitée avec succès mais de contenu à renvoyer
+         // Traitée avec succès mais de contenu à renvoyer (204)
         return response()->json(null, 204);
     }
 }

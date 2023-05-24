@@ -16,10 +16,11 @@ class CurrenciesController extends Controller
 
     public function adminindex()
     {
-        // Pour notre adminIndex, on retourne l'entierté des infromations.
+        // Pour notre adminIndex, on retourne l'intégralité des informations.
         $devises = Currency::all();
         return response()->json($devises);
     }
+
 
     public function store(Request $request)
     {
