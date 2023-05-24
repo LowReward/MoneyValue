@@ -13,13 +13,14 @@ class CreatePairsTable extends Migration
             $table->id(); // Colonne 'id' de type auto-incrémenté
             $table->string('currency_from'); // Colonne 'currency_from' de type string
             $table->string('currency_to'); // Colonne 'currency_to' de type string
-            $table->decimal('conversion_rate', 8, 4); // Colonne 'conversion_rate' de type decimal(8, 4)
+            $table->decimal('conversion_rate', 10, 6); // Colonne 'conversion_rate' de type decimal(10, 6)
             $table->unsignedInteger('request_count')->default(0); // Colonne 'request_count' de type unsigned integer avec valeur par défaut 0
+            $table->timestamps(); // Colonnes 'created_at' et 'updated_at' de type timestamp
 
 
             // Ajout des contraintes de clé étrangère pour 'currency_from' et 'currency_to' qui font référence à la colonne 'code' de la table 'currencies'
-            $table->foreign('currency_from')->references('code')->on('currencies')->onDelete('cascade');
-            $table->foreign('currency_to')->references('code')->on('currencies')->onDelete('cascade');
+            $table->foreign('currency_from')->references('code')->on('currencies')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('currency_to')->references('code')->on('currencies')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

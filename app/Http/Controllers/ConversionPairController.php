@@ -33,6 +33,8 @@ class ConversionPairController extends Controller
 
         // Effectue le calcul de conversion
         $conversionAmount = $amount * $pair->conversion_rate;
+        // Retire tous les 0 inutiles avec rtrim [ exemple : 0.1200000 -> 0.12] et ensuite Floatval repasse la valeur en float
+        $conversionAmount = floatval(rtrim($conversionAmount, '0'));
         $pair->increment('request_count');
 
         // Renvoie une réponse JSON avec les détails de la conversion
