@@ -30,7 +30,7 @@ class CurrenciesSeeder extends Seeder
 
         ]);
         DB::table('currencies')->insert([
-            'code' => 'YEN',
+            'code' => 'JPY',
             'name'=> 'Yen Japonais',
 
         ]);
