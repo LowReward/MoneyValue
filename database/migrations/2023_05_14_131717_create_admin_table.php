@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Création de la table 'admin'
         Schema::create('admin', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->id(); // Colonne 'id' de type auto-incrémenté
+            $table->string('name'); // Colonne 'name' de type string
+            $table->string('email'); // Colonne 'email' de type string
+            $table->string('password'); // Colonne 'password' de type string
+            $table->rememberToken(); // Colonne 'remember_token' pour la fonction de rappel
+            $table->timestamps(); // Colonnes 'created_at' et 'updated_at' de type timestamp
         });
     }
 
@@ -26,6 +27,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        // Suppression de la table 'admin' si elle existe
         Schema::dropIfExists('admin');
     }
 };

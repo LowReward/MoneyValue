@@ -8,17 +8,18 @@ class CreateCurrenciesTable extends Migration
 {
     public function up()
     {
+        // Création de la table 'currencies'
         Schema::create('currencies', function (Blueprint $table) {
-            $table->id();
-            // Une seule devise sous ce code possible
-            $table->string('code')->unique();
-            $table->string('name');
-            $table->timestamps();
+            $table->id(); // Colonne 'id' de type auto-incrémenté
+            $table->string('code')->unique(); // Colonne 'code' de type string unique
+            $table->string('name'); // Colonne 'name' de type string
+            $table->timestamps(); // Colonnes 'created_at' et 'updated_at' de type timestamp
         });
     }
 
     public function down()
     {
+        // Suppression de la table 'currencies' si elle existe
         Schema::dropIfExists('currencies');
     }
 }

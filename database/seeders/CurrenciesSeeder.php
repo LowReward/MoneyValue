@@ -13,6 +13,7 @@ class CurrenciesSeeder extends Seeder
      */
     public function run(): void
     {
+        // Insertion des enregistrements dans la table 'currencies'
         DB::table('currencies')->insert([
             'code' => 'EUR',
             'name'=> 'Euros',
@@ -26,6 +27,21 @@ class CurrenciesSeeder extends Seeder
         DB::table('currencies')->insert([
             'code' => 'GBP',
             'name'=> 'Sterling',
+
+        ]);
+        DB::table('currencies')->insert([
+            'code' => 'YEN',
+            'name'=> 'Yen Japonais',
+
+        ]);
+        DB::table('currencies')->insert([
+            'code' => 'BTC',
+            'name'=> 'Bitcoin',
+
+        ]);
+        DB::table('currencies')->insert([
+            'code' => 'LTC',
+            'name'=> 'Litecoin',
 
         ]);
     }

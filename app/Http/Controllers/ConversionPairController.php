@@ -26,19 +26,26 @@ class ConversionPairController extends Controller
             ->first();
 
         if (!$pair) {
+            // Si la paire de conversion n'est pas trouvée, renvoie une réponse avec le code d'erreur 404 (Not Found)
+
             return response()->json(['error' => "La paire de conversion spécifiée n'existe pas."], 404);
         }
 
-        // Effectuer le calcul de conversion
+        // Effectue le calcul de conversion
         $conversionAmount = $amount * $pair->conversion_rate;
         $pair->increment('request_count');
 
+        // Renvoie une réponse JSON avec les détails de la conversion
         return response()->json([
             'from_currency' => $fromCurrency,
             'to_currency' => $toCurrency,
             'amount' => $amount,
             'conversion_amount' => $conversionAmount,
-            'request_count' => $pair->request_count,
         ]);
+    }
+    public function status()
+    {
+        // Renvoie une réponse JSON avec le statut "ok"
+        return response()->json(['status' => 'ok']);
     }
 }

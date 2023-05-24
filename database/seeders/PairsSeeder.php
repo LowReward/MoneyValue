@@ -12,6 +12,7 @@ class PairsSeeder extends Seeder
      */
     public function run(): void
     {
+        // Insertion des enregistrements dans la table 'pairs'
         DB::table('pairs')->insert([
             'currency_from' => 'EUR',
             'currency_to'=> 'USD',

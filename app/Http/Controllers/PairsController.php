@@ -53,7 +53,7 @@ class PairsController extends Controller
     {
         //Supprime la pair en entête de requête
         $pair->delete();
-         // Traitée avec succès mais de contenu à renvoyer (204)
+        // Traitée avec succès mais de contenu à renvoyer
         return response()->json(null, 204);
     }
 }

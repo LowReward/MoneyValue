@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        //Appel du seeder à exécuter
+        //Appel des seeders à exécuter
         $this->call(AdminSeeder::class);
         $this->call(CurrenciesSeeder::class);
         $this->call(PairsSeeder::class);

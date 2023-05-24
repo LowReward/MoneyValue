@@ -13,6 +13,7 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
+        // Insertion des enregistrements dans la table 'admin'
         DB::table('admin')->insert([
             'name'=> 'philippe',
             'email' => 'philippe@admin.com',

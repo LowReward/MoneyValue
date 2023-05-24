@@ -8,17 +8,16 @@ class CreatePairsTable extends Migration
 {
     public function up()
     {
+        // Création de la table 'pairs'
         Schema::create('pairs', function (Blueprint $table) {
-            $table->id();
-            // Les currencies seront sélectionnées à partir du selecteur vue.js, donc par de raccord directement ici
-            $table->string('currency_from');
-            $table->string('currency_to');
-            // Nom de la colonne, 8 = Précision totale de la valeur décimale (Max 8 chiffres), 4 = Nb chiffres décimaux max après virgule
-            $table->decimal('conversion_rate', 8, 4);
-            // request_count sera un entier non signé avec 0 par défaut, l'incrémentation se fera à chaque requête
-            $table->unsignedInteger('request_count')->default(0);
-            $table->timestamps();
+            $table->id(); // Colonne 'id' de type auto-incrémenté
+            $table->string('currency_from'); // Colonne 'currency_from' de type string
+            $table->string('currency_to'); // Colonne 'currency_to' de type string
+            $table->decimal('conversion_rate', 8, 4); // Colonne 'conversion_rate' de type decimal(8, 4)
+            $table->unsignedInteger('request_count')->default(0); // Colonne 'request_count' de type unsigned integer avec valeur par défaut 0
 
+
+            // Ajout des contraintes de clé étrangère pour 'currency_from' et 'currency_to' qui font référence à la colonne 'code' de la table 'currencies'
             $table->foreign('currency_from')->references('code')->on('currencies')->onDelete('cascade');
             $table->foreign('currency_to')->references('code')->on('currencies')->onDelete('cascade');
         });
@@ -26,6 +25,7 @@ class CreatePairsTable extends Migration
 
     public function down()
     {
+        // Suppression de la table 'pairs' si elle existe
         Schema::dropIfExists('pairs');
     }
 }
