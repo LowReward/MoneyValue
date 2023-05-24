@@ -28,7 +28,7 @@ class ConversionPairController extends Controller
         if (!$pair) {
             // Si la paire de conversion n'est pas trouvée, renvoie une réponse avec le code d'erreur 404 (Not Found)
 
-            return response()->json(['error' => "La paire de conversion spécifiée n'existe pas."], 404);
+            return response()->json(['error' => "The specified conversion pair does not exist."], 404);
         }
 
         // Effectue le calcul de conversion
