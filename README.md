@@ -14,3 +14,5 @@
 - Launch with `php artisan serve` to then consult the project at the address indicated
 
 -> PostMan Documentation here : <a href="https://documenter.getpostman.com/view/27411059/2s93m5zgoi" target="_blank" alt='Open tab to Documentation Page'>Click on me</a>
+
+Link to the MoneyValue Front-End project : https://github.com/LowReward/MoneyValue_FrontEnd
