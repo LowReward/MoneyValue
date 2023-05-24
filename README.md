@@ -13,13 +13,4 @@
 - `php artisan db:seed`
 - Launch with `php artisan serve` to then consult the project at the address indicated
 
-you will only have to place the
-
-## Admin user:
-- You can access the administrator page directly via /admin
-
-Login credentials:
-```
-Email : philippe@admin.com
-Password: password
-```
+-> PostMan Documentation here : <a href="https://documenter.getpostman.com/view/27411059/2s93m5zgoi" target="_blank" alt='Open tab to Documentation Page'>Click on me</a>
