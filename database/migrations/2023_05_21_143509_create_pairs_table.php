@@ -13,7 +13,7 @@ class CreatePairsTable extends Migration
             $table->id(); // Colonne 'id' de type auto-incrémenté
             $table->string('currency_from'); // Colonne 'currency_from' de type string
             $table->string('currency_to'); // Colonne 'currency_to' de type string
-            $table->decimal('conversion_rate', 10, 6); // Colonne 'conversion_rate' de type decimal(10, 6)
+            $table->decimal('conversion_rate', 16, 6); // Colonne 'conversion_rate' avec 16 chiffres max dont 6 après la virgule
             $table->unsignedInteger('request_count')->default(0); // Colonne 'request_count' de type unsigned integer avec valeur par défaut 0
             $table->timestamps(); // Colonnes 'created_at' et 'updated_at' de type timestamp
 
